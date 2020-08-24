@@ -1,0 +1,227 @@
+Modules list:
+-------------
+interrupt.o:
+    CODE              Offs=000000  Size=000013  Align=00001  Fill=0000
+vectors.o:
+    VECTORS           Offs=000000  Size=000006  Align=00001  Fill=0000
+hd44780.o:
+    CODE              Offs=000013  Size=00014B  Align=00001  Fill=0000
+    RODATA            Offs=000000  Size=000015  Align=00001  Fill=0000
+delay.o:
+    CODE              Offs=00015E  Size=000013  Align=00001  Fill=0000
+io.o:
+    CODE              Offs=000171  Size=000043  Align=00001  Fill=0000
+    DATA              Offs=000000  Size=000001  Align=00001  Fill=0000
+main.o:
+    CODE              Offs=0001B4  Size=000015  Align=00001  Fill=0000
+    BSS               Offs=000000  Size=000040  Align=00001  Fill=0000
+./lib/ethergeiger.lib(addysp.o):
+    CODE              Offs=0001C9  Size=00000E  Align=00001  Fill=0000
+./lib/ethergeiger.lib(condes.o):
+    CODE              Offs=0001D7  Size=00000C  Align=00001  Fill=0000
+    DATA              Offs=000001  Size=000025  Align=00001  Fill=0000
+    ONCE              Offs=000000  Size=00000C  Align=00001  Fill=0000
+./lib/ethergeiger.lib(copydata.o):
+    CODE              Offs=0001E3  Size=00002D  Align=00001  Fill=0000
+./lib/ethergeiger.lib(crt0.o):
+    STARTUP           Offs=000000  Size=00001C  Align=00001  Fill=0000
+./lib/ethergeiger.lib(decsp1.o):
+    CODE              Offs=000210  Size=000009  Align=00001  Fill=0000
+./lib/ethergeiger.lib(incsp1.o):
+    CODE              Offs=000219  Size=000007  Align=00001  Fill=0000
+./lib/ethergeiger.lib(incsp2.o):
+    CODE              Offs=000220  Size=000015  Align=00001  Fill=0000
+./lib/ethergeiger.lib(incsp3.o):
+    CODE              Offs=000235  Size=000005  Align=00001  Fill=0000
+./lib/ethergeiger.lib(incsp4.o):
+    CODE              Offs=00023A  Size=000005  Align=00001  Fill=0000
+./lib/ethergeiger.lib(ldaxsp.o):
+    CODE              Offs=00023F  Size=000009  Align=00001  Fill=0000
+./lib/ethergeiger.lib(pusha.o):
+    CODE              Offs=000248  Size=000016  Align=00001  Fill=0000
+./lib/ethergeiger.lib(pushax.o):
+    CODE              Offs=00025E  Size=00001A  Align=00001  Fill=0000
+./lib/ethergeiger.lib(staxsp.o):
+    CODE              Offs=000278  Size=00000B  Align=00001  Fill=0000
+./lib/ethergeiger.lib(zerobss.o):
+    CODE              Offs=000283  Size=000023  Align=00001  Fill=0000
+./lib/ethergeiger.lib(zeropage.o):
+    ZEROPAGE          Offs=000000  Size=00001A  Align=00001  Fill=0000
+
+
+Segment list:
+-------------
+Name                   Start     End    Size  Align
+----------------------------------------------------
+ZEROPAGE              000000  000019  00001A  00001
+DATA                  000200  000225  000026  00001
+BSS                   000226  000265  000040  00001
+STARTUP               008026  008041  00001C  00001
+ONCE                  008042  00804D  00000C  00001
+CODE                  00804E  0082F3  0002A6  00001
+RODATA                0082F4  008308  000015  00001
+VECTORS               00FFFA  00FFFF  000006  00001
+
+
+Exports list by name:
+---------------------
+__BSS_RUN__               000226 RLA    __BSS_SIZE__              000040 REA    
+__CONSTRUCTOR_COUNT__     000000 REA    __CONSTRUCTOR_TABLE__     008042 RLA    
+__DATA_LOAD__             008000 RLA    __DATA_RUN__              000200 RLA    
+__DATA_SIZE__             000026 REA    __DESTRUCTOR_COUNT__      000000 REA    
+__DESTRUCTOR_TABLE__      008042 RLA    __RAM_SIZE__              001E00 REA    
+__RAM_START__             000200 RLA    __STARTUP__               000001 REA    
+_delay_16us               0081AC RLA    _delay_ms                 0081B5 RLA    
+_hd44780_init             008061 RLA    _init                     008026 RLA    
+_irq_int                  00804F RLA    _main                     008202 RLA    
+_nmi_int                  00804E RLA    _port_tgl                 0081F1 RLA    
+_port_write               0081BF RLA    addysp                    008218 RLA    
+copydata                  008231 RLA    decsp1                    00825E RLA    
+donelib                   008225 RLA    incsp1                    008267 RLA    
+incsp2                    008275 RLA    incsp3                    008283 RLA    
+incsp4                    008288 RLA    initlib                   008042 RLA    
+ldax0sp                   00828D RLA    ldaxysp                   00828F RLA    
+ptr1                      000008 RLZ    ptr2                      00000A RLZ    
+pusha                     00829A RLA    pushax                    0082B0 RLA    
+sp                        000000 RLZ    stax0sp                   0082C6 RLA    
+tmp1                      000010 RLZ    zerobss                   0082D1 RLA    
+
+
+
+Exports list by value:
+----------------------
+__CONSTRUCTOR_COUNT__     000000 REA    __DESTRUCTOR_COUNT__      000000 REA    
+sp                        000000 RLZ    __STARTUP__               000001 REA    
+ptr1                      000008 RLZ    ptr2                      00000A RLZ    
+tmp1                      000010 RLZ    __DATA_SIZE__             000026 REA    
+__BSS_SIZE__              000040 REA    __DATA_RUN__              000200 RLA    
+__RAM_START__             000200 RLA    __BSS_RUN__               000226 RLA    
+__RAM_SIZE__              001E00 REA    __DATA_LOAD__             008000 RLA    
+_init                     008026 RLA    __CONSTRUCTOR_TABLE__     008042 RLA    
+__DESTRUCTOR_TABLE__      008042 RLA    initlib                   008042 RLA    
+_nmi_int                  00804E RLA    _irq_int                  00804F RLA    
+_hd44780_init             008061 RLA    _delay_16us               0081AC RLA    
+_delay_ms                 0081B5 RLA    _port_write               0081BF RLA    
+_port_tgl                 0081F1 RLA    _main                     008202 RLA    
+addysp                    008218 RLA    donelib                   008225 RLA    
+copydata                  008231 RLA    decsp1                    00825E RLA    
+incsp1                    008267 RLA    incsp2                    008275 RLA    
+incsp3                    008283 RLA    incsp4                    008288 RLA    
+ldax0sp                   00828D RLA    ldaxysp                   00828F RLA    
+pusha                     00829A RLA    pushax                    0082B0 RLA    
+stax0sp                   0082C6 RLA    zerobss                   0082D1 RLA    
+
+
+
+Imports list:
+-------------
+__BSS_RUN__ ([linker generated]):
+    zerobss.o                 common/zerobss.s(8)
+__BSS_SIZE__ ([linker generated]):
+    zerobss.o                 common/zerobss.s(8)
+__CONSTRUCTOR_COUNT__ ([linker generated]):
+    condes.o                  runtime/condes.s(18)
+__CONSTRUCTOR_TABLE__ ([linker generated]):
+    condes.o                  runtime/condes.s(18)
+__DATA_LOAD__ ([linker generated]):
+    copydata.o                common/copydata.s(8)
+__DATA_RUN__ ([linker generated]):
+    copydata.o                common/copydata.s(8)
+__DATA_SIZE__ ([linker generated]):
+    copydata.o                common/copydata.s(8)
+__DESTRUCTOR_COUNT__ ([linker generated]):
+    condes.o                  runtime/condes.s(19)
+__DESTRUCTOR_TABLE__ ([linker generated]):
+    condes.o                  runtime/condes.s(19)
+__RAM_SIZE__ ([linker generated]):
+    crt0.o                    crt0.s(11)
+__RAM_START__ ([linker generated]):
+    crt0.o                    crt0.s(11)
+__STARTUP__ (crt0.o):
+    main.o                    main.s(13)
+_delay_16us (delay.o):
+    hd44780.o                 hd44780.s(20)
+_delay_ms (delay.o):
+    main.o                    main.s(15)
+    hd44780.o                 hd44780.s(21)
+_hd44780_init (hd44780.o):
+    main.o                    main.s(14)
+_init (crt0.o):
+    vectors.o                 vectors.s(7)
+    interrupt.o               interrupt.s(9)
+_irq_int (interrupt.o):
+    vectors.o                 vectors.s(8)
+_main (main.o):
+    crt0.o                    crt0.s(8)
+_nmi_int (interrupt.o):
+    vectors.o                 vectors.s(8)
+_port_tgl (io.o):
+    main.o                    main.s(17)
+_port_write (io.o):
+    main.o                    main.s(16)
+addysp (addysp.o):
+    incsp4.o                  runtime/incsp4.s(8)
+    incsp3.o                  runtime/incsp3.s(8)
+copydata (copydata.o):
+    crt0.o                    crt0.s(13)
+decsp1 (decsp1.o):
+    hd44780.o                 hd44780.s(265)
+donelib (condes.o):
+    crt0.o                    crt0.s(13)
+incsp1 (incsp1.o):
+    io.o                      io.s(98)
+    io.o                      io.s(98)
+    io.o                      io.s(98)
+    io.o                      io.s(98)
+    hd44780.o                 hd44780.s(265)
+    hd44780.o                 hd44780.s(265)
+incsp2 (incsp2.o):
+    hd44780.o                 hd44780.s(265)
+incsp3 (incsp3.o):
+    hd44780.o                 hd44780.s(265)
+incsp4 (incsp4.o):
+    hd44780.o                 hd44780.s(265)
+initlib (condes.o):
+    crt0.o                    crt0.s(13)
+ldax0sp (ldaxsp.o):
+    hd44780.o                 hd44780.s(265)
+ldaxysp (ldaxsp.o):
+    hd44780.o                 hd44780.s(265)
+ptr1 (zeropage.o):
+    copydata.o                common/copydata.s(9)
+    zerobss.o                 common/zerobss.s(9)
+    hd44780.o                 hd44780.s(11)
+ptr2 (zeropage.o):
+    copydata.o                common/copydata.s(9)
+pusha (pusha.o):
+    io.o                      io.s(98)
+    io.o                      io.s(98)
+    io.o                      io.s(98)
+    io.o                      io.s(98)
+    hd44780.o                 hd44780.s(265)
+    hd44780.o                 hd44780.s(265)
+    hd44780.o                 hd44780.s(265)
+    hd44780.o                 hd44780.s(265)
+    hd44780.o                 hd44780.s(265)
+pushax (pushax.o):
+    hd44780.o                 hd44780.s(265)
+    hd44780.o                 hd44780.s(265)
+sp (zeropage.o):
+    addysp.o                  runtime/addysp.s(8)
+    staxsp.o                  runtime/staxsp.s(8)
+    pushax.o                  runtime/pushax.s(8)
+    pusha.o                   runtime/pusha.s(8)
+    ldaxsp.o                  runtime/ldaxsp.s(8)
+    incsp2.o                  runtime/incsp2.s(8)
+    incsp1.o                  runtime/incsp1.s(8)
+    decsp1.o                  runtime/decsp1.s(8)
+    crt0.o                    /opt/cc65/asminc/zeropage.inc(11)
+    io.o                      io.s(10)
+    hd44780.o                 hd44780.s(10)
+stax0sp (staxsp.o):
+    hd44780.o                 hd44780.s(265)
+tmp1 (zeropage.o):
+    copydata.o                common/copydata.s(9)
+zerobss (zerobss.o):
+    crt0.o                    crt0.s(13)
+
