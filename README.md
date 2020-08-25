@@ -1,2 +1,1 @@
-# RetroEG
 # logobot
