@@ -13,24 +13,6 @@ main.s: main.c
 main.o: main.s
 	ca65 --cpu 65c02 main.s
 	
-#cf.s: cf.c
-#	cc65 -t none -O --cpu 65c02 cf.c	
-
-#cf.o: cf.s
-#	ca65 --cpu 65c02 cf.s
-	
-#diskio.s: diskio.c
-#	cc65 -t none -O --cpu 65c02 diskio.c	
-
-#diskio.o: diskio.s
-#	ca65 --cpu 65c02 diskio.s
-
-#ff.s: ff.c
-#	cc65 -t none -O --cpu 65c02 ff.c	
-
-#ff.o: ff.s
-#	ca65 --cpu 65c02 ff.s
-	
 delay.o: delay.s
 	ca65 --cpu 65c02 delay.s
 	
