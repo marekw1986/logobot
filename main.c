@@ -41,7 +41,9 @@
 //#include "ff.h"
 
 //FATFS CFFatFS;
+
 static char buffer[64];
+static uint16_t number = 0;
 
 char* __fastcall__ utoa (unsigned val, char* buf, int radix);
 char* __fastcall__ ultoa (unsigned long val, char* buf, int radix);
@@ -67,8 +69,24 @@ int main (void) {
 //    else {
 		//Dodać raportowanie przez UART
 //	}
+
+	hd44780_gotoxy(0, 0);
+	hd44780_write("6502 is still alive!", 20);
+	hd44780_gotoxy(1, 0);
+	hd44780_write("Device designed by", 18);
+	hd44780_gotoxy(2, 0);
+	hd44780_write("Marek Wiecek SQ9RZI", 19);
 	
 	while(1) {
+		hd44780_gotoxy(3, 0);
+		hd44780_write("                    ", 20);		
+		utoa(number,buffer, 10);
+		hd44780_gotoxy(3, 0);
+		hd44780_write(buffer, strlen(buffer));
+		number++;
+		
+		if (!(BTNS & BTN0)) { number += 50; }
+		
 		port_tgl(0x85);						//Toggle both LEDs and watchgod line
 		delay_ms(250);			
 		//mos6551_handle_rx();
