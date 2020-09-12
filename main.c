@@ -57,18 +57,18 @@ int main (void) {
 	CLI();
 
 	hd44780_gotoxy(0, 0);
-	hd44780_write("6502 is still alive!", 20);
+	hd44780_puts("6502 is still alive!");
 	hd44780_gotoxy(1, 0);
-	hd44780_write("Device designed by", 18);
+	hd44780_puts("Device designed by");
 	hd44780_gotoxy(2, 0);
-	hd44780_write("Marek Wiecek SQ9RZI", 19);
+	hd44780_puts("Marek Wiecek SQ9RZI");
 	
 	while(1) {
 		hd44780_gotoxy(3, 0);
-		hd44780_write("                    ", 20);		
+		hd44780_puts("                    ");		
 		utoa(number,buffer, 10);
 		hd44780_gotoxy(3, 0);
-		hd44780_write(buffer, strlen(buffer));
+		hd44780_puts(buffer);
 		number++;
 		
 		if (!(BTNS & BTN0)) { number += 50; }
