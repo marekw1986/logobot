@@ -48,7 +48,7 @@ size_t __fastcall__ strlen (const char* s);
 
 
 int main (void) {
-	port_write(0x80);
+	port_write(0x81);
 
     //mc6840_init();
     //mos6551_init();
@@ -73,7 +73,8 @@ int main (void) {
 		
 		if (!(BTNS & BTN0)) { number += 50; }
 		
-		port_tgl(0x85);						//Toggle both LEDs and watchgod line
+		port_tgl(0x84);						//Toggle both LEDs
+		feed_hungry_watchdog();				//Reset watchdog
 		delay_ms(250);			
 		//mos6551_handle_rx();
 	}
