@@ -6,10 +6,10 @@
 #define PORT (*(volatile uint8_t*)0x7C00)
 #define BTNS (*(volatile uint8_t*)0x6300)
 
-#define PA_8255 (*(volatile uint8_t*)0x6600)
-#define PB_8255	(*(volatile uint8_t*)0x6601)
-#define PC_8255	(*(volatile uint8_t*)0x6602)
-#define CONF_8255 (*(volatile uint8_t*)0x6603)
+#define PA_8255 (*(volatile uint8_t*)0x6400)
+#define PB_8255	(*(volatile uint8_t*)0x6401)
+#define PC_8255	(*(volatile uint8_t*)0x6402)
+#define CONF_8255 (*(volatile uint8_t*)0x6403)
 
 #define BTN_UP	0x01
 #define BTN_DN	0x02
