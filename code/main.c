@@ -34,13 +34,14 @@
 #include <6502.h>
 #include "config.h"
 #include "hd44780.h"
-//#include "mos6551.h"
-//#include "mc6840.h"
+#include "mos6551.h"
+#include "mc6840.h"
 #include "delay.h"
 #include "io.h"
 
 static char buffer[64];
 static uint16_t number = 0;
+static uint8_t timer = 0;
 
 char* __fastcall__ utoa (unsigned val, char* buf, int radix);
 char* __fastcall__ ultoa (unsigned long val, char* buf, int radix);
@@ -50,8 +51,8 @@ size_t __fastcall__ strlen (const char* s);
 int main (void) {
 	port_write(0x81);
 
-    //mc6840_init();
-    //mos6551_init();
+    mc6840_init();
+    mos6551_init();
 	hd44780_init();
 	
 	CLI();
@@ -64,19 +65,20 @@ int main (void) {
 	hd44780_puts("Marek Wiecek SQ9RZI");
 	
 	while(1) {
-		hd44780_gotoxy(3, 0);
-		hd44780_puts("                    ");		
-		utoa(number,buffer, 10);
-		hd44780_gotoxy(3, 0);
-		hd44780_puts(buffer);
-		number++;
+		if ( (uint8_t)(millis() - timer) > 12 ) {			//12x20ms
+			timer = millis();
+			port_tgl(0x84);						//Toggle both LEDs
+			feed_hungry_watchdog();				//Reset watchdog
 		
-		if (!(BTNS & BTN0)) { number += 50; }
-		
-		port_tgl(0x84);						//Toggle both LEDs
-		feed_hungry_watchdog();				//Reset watchdog
-		delay_ms(250);			
-		//mos6551_handle_rx();
+			hd44780_gotoxy(3, 0);
+			hd44780_puts("                    ");		
+			utoa(number,buffer, 10);
+			hd44780_gotoxy(3, 0);
+			hd44780_puts(buffer);
+			number++;
+			if (!(BTNS & BTN0)) { number += 50; }
+		}					
+		mos6551_handle_rx();
 	}
 	
 	return 0;
