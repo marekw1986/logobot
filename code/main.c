@@ -56,8 +56,8 @@ int main (void) {
 	PB_8255 = 0x00;				//All PB outputs low
 	PC_8255 = 0x00;	 			//All PC outputs low
 
-    mc6840_init();
-    mos6551_init();
+	mc6840_init();
+	mos6551_init();
 	hd44780_init();
 	
 	CLI();
