@@ -50,6 +50,11 @@ size_t __fastcall__ strlen (const char* s);
 
 int main (void) {
 	port_write(0x81);
+	
+	CONF_8255 = 0x80;			//Mode 0, PA, PB and PC is n output
+	PA_8255 = 0x81; 			//(GATE3=1, GATE1=0, PA5=0. PA4=0, DIR1=0, DIR2=0, PA1=0, GATE2=1)
+	PB_8255 = 0x00;				//All PB outputs low
+	PC_8255 = 0x00;	 			//All PC outputs low
 
     mc6840_init();
     mos6551_init();
