@@ -42,6 +42,7 @@
 static char buffer[64];
 static uint16_t number = 0;
 static uint8_t timer = 0;
+static uint8_t uart_timer = 0;
 
 char* __fastcall__ utoa (unsigned val, char* buf, int radix);
 char* __fastcall__ ultoa (unsigned long val, char* buf, int radix);
@@ -82,7 +83,13 @@ int main (void) {
 			hd44780_puts(buffer);
 			number++;
 			if (!(BTNS & BTN0)) { number += 50; }
-		}					
+		}			
+		
+		if ( (uint8_t)(millis() - uart_timer) > 40 ) {
+			uart_timer = millis();
+			mos6551_puts("Test\r\n");
+		}	
+			
 		mos6551_handle_rx();
 	}
 	
