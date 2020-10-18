@@ -11,7 +11,6 @@
 .export   _irq_int, _nmi_int
 
 MC6840_STA	  = $6481
-M6242_STA     = $640D
 MC6840_TIMER1 = $6482
 ACIA_RXD = $6500
 ACIA_STS = $6501
