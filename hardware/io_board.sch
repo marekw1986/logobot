@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="7.2.0">
+<eagle version="7.7.0">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -16890,6 +16890,10 @@ ULN and UDN Series&lt;p&gt;
 <wire x1="7.62" y1="55.88" x2="7.62" y2="17.78" width="0.1524" layer="91"/>
 <wire x1="5.08" y1="55.88" x2="7.62" y2="55.88" width="0.1524" layer="91"/>
 <junction x="7.62" y="55.88"/>
+<pinref part="U1" gate="G$1" pin="CTS"/>
+<wire x1="5.08" y1="60.96" x2="7.62" y2="60.96" width="0.1524" layer="91"/>
+<wire x1="7.62" y1="60.96" x2="7.62" y2="58.42" width="0.1524" layer="91"/>
+<junction x="7.62" y="58.42"/>
 </segment>
 <segment>
 <pinref part="QG1" gate="G$1" pin="GND"/>
@@ -17639,7 +17643,7 @@ ULN and UDN Series&lt;p&gt;
 <label x="129.54" y="-30.48" size="1.4224" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
-<net name="N$1" class="0">
+<net name="TXD_TTL" class="0">
 <segment>
 <pinref part="U1" gate="G$1" pin="TXD"/>
 <wire x1="5.08" y1="40.64" x2="12.7" y2="40.64" width="0.1524" layer="91"/>
@@ -17648,29 +17652,13 @@ ULN and UDN Series&lt;p&gt;
 <wire x1="12.7" y1="50.8" x2="38.1" y2="50.8" width="0.1524" layer="91"/>
 </segment>
 </net>
-<net name="N$2" class="0">
-<segment>
-<pinref part="U1" gate="G$1" pin="RTS"/>
-<wire x1="5.08" y1="48.26" x2="38.1" y2="48.26" width="0.1524" layer="91"/>
-<pinref part="IC2" gate="G$1" pin="T2IN"/>
-</segment>
-</net>
-<net name="N$3" class="0">
+<net name="RXD_TTL" class="0">
 <segment>
 <pinref part="U1" gate="G$1" pin="RXD"/>
 <wire x1="5.08" y1="43.18" x2="10.16" y2="43.18" width="0.1524" layer="91"/>
 <wire x1="10.16" y1="43.18" x2="10.16" y2="45.72" width="0.1524" layer="91"/>
 <pinref part="IC2" gate="G$1" pin="R1OUT"/>
 <wire x1="10.16" y1="45.72" x2="38.1" y2="45.72" width="0.1524" layer="91"/>
-</segment>
-</net>
-<net name="N$4" class="0">
-<segment>
-<pinref part="U1" gate="G$1" pin="CTS"/>
-<wire x1="5.08" y1="60.96" x2="17.78" y2="60.96" width="0.1524" layer="91"/>
-<wire x1="17.78" y1="60.96" x2="17.78" y2="43.18" width="0.1524" layer="91"/>
-<pinref part="IC2" gate="G$1" pin="R2OUT"/>
-<wire x1="17.78" y1="43.18" x2="38.1" y2="43.18" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$5" class="0">

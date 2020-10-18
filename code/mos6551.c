@@ -30,9 +30,10 @@ void __fastcall__ mos6551_putc (char c) {
 }
 
 
-void mos6551_puts (const char *str) {
+void __fastcall__ mos6551_puts (const char *str) {
 	while (*str != '\0') {
-		mos6551_putc(*str);
+		while (!(ACIA_STS & 0x10));
+		ACIA_TXD = *str;
 		str++;
 	}
 }
