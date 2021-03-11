@@ -4,8 +4,8 @@ all: logobot.hex
 logobot.hex: a.out
 	bin2hex.py a.out logobot.hex
 
-a.out: interrupt.o vectors.o hd44780.o delay.o io.o cf.o mos6551.o mc6840.o parser.o main.o 
-	ld65 -C ./lib/ethergeiger.cfg -m main.map interrupt.o vectors.o hd44780.o delay.o io.o cf.o mos6551.o mc6840.o parser.o main.o ./lib/ethergeiger.lib	
+a.out: interrupt.o vectors.o hd44780.o delay.o io.o cf.o ff.o diskio.o mos6551.o mc6840.o parser.o main.o 
+	ld65 -C ./lib/ethergeiger.cfg -m main.map interrupt.o vectors.o hd44780.o delay.o io.o cf.o ff.o diskio.o mos6551.o mc6840.o parser.o main.o ./lib/ethergeiger.lib	
 
 main.s: main.c
 	cc65 -t none -O --cpu 65c02 main.c
@@ -50,7 +50,19 @@ cf.s: cf.c
 	cc65 -t none -O --cpu 65c02 cf.c	
 
 cf.o: cf.s
-	ca65 --cpu 65c02 cf.s			
+	ca65 --cpu 65c02 cf.s
+	
+diskio.s: diskio.c
+	cc65 -t none -O --cpu 65c02 diskio.c	
+
+diskio.o: diskio.s
+	ca65 --cpu 65c02 diskio.s
+
+ff.s: ff.c
+	cc65 -t none -O --cpu 65c02 ff.c	
+
+ff.o: ff.s
+	ca65 --cpu 65c02 ff.s				
 	
 interrupt.o: interrupt.s
 	ca65 --cpu 65c02 interrupt.s
