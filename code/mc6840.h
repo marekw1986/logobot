@@ -20,12 +20,12 @@
 #define TM_INTERUPT_DISABLE				0x00
 
 #define TM_CONT_OP_MODE1				0x00
-#define TM_FREQ_COMP_MODE1				0x20
+#define TM_FREQ_COMP_MODE1				0x08
 #define TM_CONT_OP_MODE2				0x10
-#define TM_PULSE_WIDTH_COMP_MODE1		0x30
-#define TM_SINGLE_SHOT_MODE1			0x08
+#define TM_PULSE_WIDTH_COMP_MODE1		0x18
+#define TM_SINGLE_SHOT_MODE1			0x20
 #define TM_FREQ_COMP_MODE2				0x28
-#define TM_SINGLE_SHOT_MODE2			0x18
+#define TM_SINGLE_SHOT_MODE2			0x30
 #define TM_PULSE_WIDTH_COMP_MODE2		0x38
 
 #define TM_NORMAL_16BIT					0x00
@@ -48,6 +48,8 @@
 
 
 void mc6840_init (void);
+void mc6840_set_step1_freq (uint16_t freq);
+void mc6840_set_step2_freq (uint16_t freq);
 uint8_t millis(void);
 
 #endif //_MC6840_H_

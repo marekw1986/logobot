@@ -70,6 +70,14 @@ int main (void) {
 	hd44780_gotoxy(2, 0);
 	hd44780_puts("Marek Wiecek SQ9RZI");
 	
+    MOTOR1_FREQ(20); //20 Hz
+    MOTOR1_DIR_FORWARD;
+    MOTOR1_START;
+
+    MOTOR2_FREQ(40); //40 Hz
+    MOTOR2_DIR_BACKWARD;
+    MOTOR2_START;
+    
 	while(1) {
 		if ( (uint8_t)(millis() - timer) > 12 ) {			//12x20ms
 			timer = millis();

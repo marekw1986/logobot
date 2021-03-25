@@ -71,4 +71,4 @@ vectors.o: vectors.s
 	ca65 --cpu 65c02 vectors.s	
 	
 clean:
-	$(RM) *.o *.lst *.map *.out *.hex a.out ff.s diskio.s cf.s main.s hd44780.s mc6840.s mos6551.s io.s
+	$(RM) *.o *.lst *.map *.out *.hex a.out ff.s diskio.s cf.s main.s hd44780.s mc6840.s mos6551.s io.s parser.s

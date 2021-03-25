@@ -35,6 +35,9 @@
 #define MOTOR2_DIR_BACKWARD		PA_8255 &= ~(MOTOR2_DIR_BM)
 #define MOTOR2_DIR_FORWARD		PA_8255 |= MOTOR2_DIR_BM
 
+#define MOTOR1_FREQ(f)          mc6840_set_step1_freq(f)
+#define MOTOR2_FREQ(f)          mc6840_set_step2_freq(f)
+
 #define BACKLIGHT_PIN 0x10
 
 #define SHORT_WAIT 3    // 3 * 20ms = 60 ms.

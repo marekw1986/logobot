@@ -51,8 +51,8 @@ void parse_cmd(char * pBuf) {
 
 
 static uint8_t test_service(char * params) {
-	char* tok;
-	int8_t supbuf[4];
+	//char* tok;
+	//int8_t supbuf[4];
 	
 	mos6551_puts("Test\r\n");
 	
